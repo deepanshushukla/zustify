@@ -1,0 +1,47 @@
+{
+  "name": "zustify",
+  "version": "1.0.0",
+  "description": "A simplified state management wrapper on zustand",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepack": "yarn build",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepanshushukla/zustify.git"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "keywords": [
+    "zustand",
+    "react",
+    "redux",
+    "rematch",
+    "state",
+    "manage",
+    "management",
+    "state management"
+  ],
+  "author": "deepanshushukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepanshushukla/zustify/issues"
+  },
+  "homepage": "https://github.com/deepanshushukla/zustify#readme",
+  "dependencies": {
+    "immer": "^10.0.4",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.79",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@types/react": ">=16.8",
+    "react": ">=16.8"
+  }
+}
