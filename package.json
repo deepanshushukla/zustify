@@ -1,6 +1,6 @@
 {
-  "name": "ugly-zustify",
-  "version": "1.0.7",
+  "name": "zustify",
+  "version": "1.0.2",
   "type": "module",
   "description": "A simplified state management wrapper on zustand",
   "main": "dist/cjs/index.js",
@@ -29,7 +29,7 @@
     "state management"
   ],
   "author": "deepanshushukla",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/deepanshushukla/zustify/issues"
   },
