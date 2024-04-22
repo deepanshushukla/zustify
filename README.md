@@ -12,16 +12,15 @@ Whether you're a fan of Redux APIs or looking for a more modern approach to stat
 
 ### Install via yarn
 ```ts
-yarn add zustify;
+yarn add zustify
 ```
 ### Install via npm
 ```ts
-npm install zustify;
+npm install zustify
 ```
 
-## Usage 
-### Create your store
-
+## Usage Typescript
+### Create your store 
 ```ts
 import {createSharedStore, Action} from 'zustify' 
 
@@ -35,7 +34,7 @@ const [useCountStore, useCountDispatch] =  createSharedStore(
     // This is your reducer where you can provide actions
     {
         increment(state, action: Action<number>) {
-            const number = action.payload + 1;
+            const number = action.payload;
             //update the state traditional  zustify will take care of the rerendering
             state.count += number;
         },
@@ -68,11 +67,11 @@ function Mycomponent() {
   const { dispatch, actions, reset } = useCountDispatch();
 
   return (
-    <View>
-      <D11Text>{count}</D11Text>
-      <Pressable onClick={() => { dispatch(actions.increment, 1) }}>Increment</Pressable>
-      <Pressable onClick={() => { dispatch(actions.decrement, 1) }}>Decrement</Pressable>
-    </View>
+    <div>
+      <div>{count}</div>
+      <button onClick={() => { dispatch(actions.increment, 1) }}>Increment</button>
+      <button onClick={() => { dispatch(actions.decrement, 1) }}>Decrement</button>
+    </div>
   );
 }
 ```

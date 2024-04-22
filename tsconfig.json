@@ -1,13 +1,17 @@
 {
     "compilerOptions": {
         "target": "ESNext",
-        "module": "CommonJS",
+        "module": "ESNext",
         "outDir": "./dist",
         "declaration": true,  // Generate .d.ts files
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "declarationDir": "types",
+        "emitDeclarationOnly": true,
+        "types": ["react", "react-dom"]
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules", "dist"]

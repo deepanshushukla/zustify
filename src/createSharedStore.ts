@@ -1,7 +1,7 @@
-import {useCallback,useMemo} from 'react'
+import {useCallback,useMemo} from "react";
 import create from 'zustand'
 import shallow from 'zustand/shallow'
-import {produce} from 'immer'
+import {produce} from './produce'
 
 
 import {
