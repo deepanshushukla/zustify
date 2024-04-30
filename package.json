@@ -1,6 +1,6 @@
 {
   "name": "zustify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "A simplified state management wrapper on zustand",
   "main": "dist/cjs/index.js",
@@ -35,7 +35,8 @@
   },
   "homepage": "https://github.com/deepanshushukla/zustify#readme",
   "dependencies": {
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.2",
+    "zustify": "^1.0.2"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

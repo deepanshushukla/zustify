@@ -103,4 +103,10 @@ const completeState = useCountStore.getState();
 
 ```
 
+### Working example:
+[CodeSandBox Example](https://codesandbox.io/p/sandbox/a-simple-react-counter-forked-3xx8zg)
+
+
+
+
 
