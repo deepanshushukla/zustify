@@ -1,13 +1,13 @@
 {
   "name": "zustify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "A simplified state management wrapper on zustand",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepack": "yarn build",
+    "prepack": "npm run build",
     "build": "rollup -c --bundleConfigAsCjs"
   },
   "repository": {
@@ -35,8 +35,8 @@
   },
   "homepage": "https://github.com/deepanshushukla/zustify#readme",
   "dependencies": {
-    "zustand": "^4.5.2",
-    "zustify": "^1.0.2"
+    "zustify": "^1.0.2",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -56,7 +56,7 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
-    "zustand": "^4.5.2"
+    "zustand": "^5.0.0"
   },
   "peerDependencies": {
     "@types/react": ">=16.8",

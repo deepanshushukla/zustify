@@ -1,6 +1,6 @@
 import {useCallback,useMemo} from "react";
-import create from 'zustand'
-import shallow from 'zustand/shallow'
+import {create} from 'zustand'
+import {useShallow} from 'zustand/shallow'
 import {produce} from './produce'
 
 
@@ -33,32 +33,32 @@ import {
  * @param reducer
  */
 export function createSharedStore<
-  S extends State,
-  R extends Reducer<S>,
+    S extends State,
+    R extends Reducer<S>,
 >(initialState: S, reducer: R) {
   const useStore = create(() => initialState)
   const actions = Object.keys(reducer).reduce(
-    (acc, key) => ({
-      ...acc,
-      [key]: key,
-    }),
-    {},
+      (acc, key) => ({
+        ...acc,
+        [key]: key,
+      }),
+      {},
   ) as {
     [K in keyof R]: K
   }
 
 
   function dispatchAction<A extends keyof typeof actions>(
-    ...[action, payload]: DispatchArgs<A, S, R[A]>
+      ...[action, payload]: DispatchArgs<A, S, R[A]>
   ) {
     useStore.setState((prev) => {
       const handler = reducer[action]
 
       if (!handler) {
         const message = `Action (${String(
-          action,
+            action,
         )}) is not handled by any case in the reducer!`
-          throw new Error(message)
+        throw new Error(message)
       }
 
       return produce(prev, (draftState: S) => {
@@ -80,27 +80,27 @@ export function createSharedStore<
 
 
     const dispatch = useCallback(
-      <A extends keyof typeof actions>(...args: DispatchArgs<A, S, R[A]>) => {
-        return dispatchAction(...args)
-      },
-      [],
+        <A extends keyof typeof actions>(...args: DispatchArgs<A, S, R[A]>) => {
+          return dispatchAction(...args)
+        },
+        [],
     )
 
     return useMemo(
-      () =>
-        ({
-          dispatch,
-          reset,
-          actions,
-        } as const),
-      [dispatch],
+        () =>
+            ({
+              dispatch,
+              reset,
+              actions,
+            } as const),
+        [dispatch],
     )
   }
 
   function useGlobalStore<SelectedState>(
-    selector: Selector<S, SelectedState>,
+      selector: Selector<S, SelectedState>,
   ): SelectedState {
-    const state = useStore(selector, shallow)
+    const state = useStore(useShallow(selector))
 
     return useMemo(() => state, [state])
   }
